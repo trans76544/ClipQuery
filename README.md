@@ -64,9 +64,7 @@ Each provider profile can define:
 2. Go to the extensions page.
 3. Enable Developer Mode.
 4. Click `Load unpacked`.
-5. Select this folder:
-
-   `G:\JSProject\Audition_Plugin`
+5. Select the project folder after cloning or downloading this repository.
 
 ## Configure
 
