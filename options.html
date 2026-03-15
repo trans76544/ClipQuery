@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selection QA Helper 设置</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <h1>Selection QA Helper</h1>
+        <p class="subtitle">
+          在这里配置回答模式、多个 provider 配置，以及“提问 / 解释 / 总结 / 翻译”分别默认走哪个模型。
+        </p>
+
+        <form id="settings-form">
+          <section class="panel">
+            <h2>回答模式</h2>
+            <label class="field">
+              <span>默认回答策略</span>
+              <select id="answerMode">
+                <option value="strict">严格网页模式</option>
+                <option value="balanced">平衡模式</option>
+                <option value="general">自由问答模式</option>
+              </select>
+            </label>
+            <p class="hint">
+              严格模式更忠于网页选中文本；平衡模式会在上下文不足时适度补充常识；自由模式更像通用助手。
+            </p>
+          </section>
+
+          <section class="panel">
+            <h2>Codex OAuth 登录</h2>
+            <div class="status-card">
+              <div class="status-row">
+                <span class="status-label">登录状态</span>
+                <span id="codexAuthBadge" class="status-badge">未登录</span>
+              </div>
+              <p id="codexAuthDetails" class="status-details">
+                如果某个 provider 类型选的是 Codex OAuth，请先在这里完成登录。
+              </p>
+              <p class="hint">
+                说明：这是基于公开 Codex 客户端行为整理出的实验接入，不是 OpenAI 官方公开文档中的浏览器扩展标准方案。
+              </p>
+              <div class="inline-actions">
+                <button id="codexLoginButton" type="button">登录 Codex OAuth</button>
+                <button id="codexLogoutButton" type="button" class="secondary">退出登录</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="section-header">
+              <h2>Provider 配置</h2>
+              <button id="addProviderButton" type="button" class="secondary">新增 Provider</button>
+            </div>
+            <div id="providerList" class="provider-list"></div>
+            <p class="hint">
+              这里的每一项可以理解为一个“可选模型配置”。你可以配置多个 Qwen、OpenAI 兼容接口或 Codex OAuth 配置，再把它们分配给不同动作。
+            </p>
+          </section>
+
+          <section class="panel">
+            <h2>动作模型映射</h2>
+
+            <label class="field">
+              <span>提问</span>
+              <select id="routeAsk"></select>
+            </label>
+
+            <label class="field">
+              <span>解释</span>
+              <select id="routeExplain"></select>
+            </label>
+
+            <label class="field">
+              <span>总结</span>
+              <select id="routeSummarize"></select>
+            </label>
+
+            <label class="field">
+              <span>翻译</span>
+              <select id="routeTranslate"></select>
+            </label>
+          </section>
+
+          <div class="actions">
+            <button type="submit">保存设置</button>
+            <span id="status"></span>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>
