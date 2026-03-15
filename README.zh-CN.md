@@ -134,4 +134,4 @@
 
 ## License
 
-正式发布到 GitHub 前，建议补充你希望使用的开源协议。
+本项目采用 MIT License，详见 [LICENSE](./LICENSE)。

@@ -134,4 +134,4 @@ This project is actively evolving. The core interaction flow is implemented, but
 
 ## License
 
-Add your preferred license before publishing publicly.
+This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
