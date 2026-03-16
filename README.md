@@ -99,6 +99,7 @@ The extension supports math-style output in assistant answers.
 - Inline math: `\(...\)`, `$...$`
 
 Math rendering is powered by KaTeX inside the extension.
+The repository vendors the required KaTeX assets, so loading the unpacked extension does not depend on `node_modules`.
 
 ## Project Structure
 

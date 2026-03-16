@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "ClipQuery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Select text on any page, ask a question, and view an LLM answer in a small overlay.",
   "permissions": [
     "storage",
@@ -24,11 +24,11 @@
         "<all_urls>"
       ],
       "js": [
-        "node_modules/katex/dist/katex.min.js",
+        "vendor/katex/katex.min.js",
         "content.js"
       ],
       "css": [
-        "node_modules/katex/dist/katex.min.css",
+        "vendor/katex/katex.min.css",
         "content.css"
       ],
       "run_at": "document_idle"
@@ -37,7 +37,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "node_modules/katex/dist/fonts/*"
+        "vendor/katex/fonts/*"
       ],
       "matches": [
         "<all_urls>"
