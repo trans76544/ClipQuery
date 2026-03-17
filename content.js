@@ -410,6 +410,15 @@
     }
 
     if (!state.panelVisible) {
+      if (state.isPinnedForPage) {
+        clearBrowserSelection();
+        return;
+      }
+
+      if (state.actionBarVisible) {
+        clearTransientSelectionState();
+        refreshActionBarVisibility();
+      }
       return;
     }
 
@@ -421,6 +430,12 @@
     clearBrowserSelection();
     cancelActiveRequest();
     hideAll();
+  }
+
+  function clearTransientSelectionState() {
+    clearBrowserSelection();
+    state.selectedText = "";
+    state.anchorRect = null;
   }
 
   function handleViewportChange() {
